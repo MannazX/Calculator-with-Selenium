@@ -11,15 +11,22 @@
 
 <body>
     <div class="nav-bar"></div>
-    <h1>Calculator</h1>
 
     <div id="app">
-        <h2>{{ intro }}</h2>
-
-        <form>
+        <h1>{{ intro }}</h1>
+        <div>
+            <form>
             <label for="number1"></label>
-            
-        </form>
+            <input type="text" v-model.number="number1" id="number1" name="number1" value="First Number">
+            <p>+</p>
+            <label for="number2"></label>
+            <input type="text" v-model.number="number2" id="number2" name="number2" value="Second Number"><br><br>
+            <input type="button" v-on:click="assignSum" id="equals" value="="></input>
+            <br>
+            <br>
+            <h1>{{ "Result is: " + result }}</h1>
+            </form>
+        </div>
     </div>
 
     <script src="./js/main.js"></script>
